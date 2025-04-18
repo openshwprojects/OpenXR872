@@ -5,7 +5,7 @@
 # ----------------------------------------------------------------------------
 # cross compiler
 # ----------------------------------------------------------------------------
-CC_DIR := ~/tools/gcc-arm-none-eabi-4_9-2015q2/bin
+CC_DIR := ~/gcc-arm/gcc-arm-none-eabi-4_9-2015q2-20150609-linux/gcc-arm-none-eabi-4_9-2015q2/bin
 CC_PREFIX := $(CC_DIR)/arm-none-eabi-
 
 AS      := $(CC_PREFIX)as
@@ -80,8 +80,11 @@ endif
 
 CC_FLAGS = $(CPU) -c $(DBG_FLAG) -fno-common -fmessage-length=0 \
 	-fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer \
-	-Wall -Werror -Wpointer-arith -Wno-error=unused-function \
+	-Wall -Wpointer-arith -Wno-error=unused-function \
 	-MMD -MP $(OPTIMIZE_FLAG)
+
+# flag 
+CC_FLAGS += -DPLATFORM_XR872=1
 
 LD_FLAGS = $(CPU) -Wl,--gc-sections --specs=nano.specs \
 	-Wl,-Map=$(basename $@).map,--cref
