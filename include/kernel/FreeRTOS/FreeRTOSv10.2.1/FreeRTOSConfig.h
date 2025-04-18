@@ -87,7 +87,7 @@ extern uint32_t SystemCoreClock;        /* Global variable of CMSIS */
 #define configMINIMAL_SECURE_STACK_SIZE                         ( 512 )
 #define configMAXIMAL_SECURE_STACK_SIZE                         ( 1024 )
 #define configMAX_TASK_NAME_LEN                                 ( 16 )  // change by xradio from 12
-#define configTOTAL_HEAP_SIZE                                   ( ( size_t ) ( 50 * 1024 ) )
+#define configTOTAL_HEAP_SIZE                                   ( ( size_t ) ( 75 * 1024 ) )
 
 /* Constants that build features in or out. */
 #define configUSE_MUTEXES                                       1
