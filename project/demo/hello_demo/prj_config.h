@@ -71,7 +71,7 @@ extern "C" {
 #define PRJCONF_SYSINFO_FLASH           0
 
 /* sysinfo start address */
-#define PRJCONF_SYSINFO_ADDR            ((1024 - 4) * 1024)
+#define PRJCONF_SYSINFO_ADDR            ((1024 - 64) * 1024)
 
 /* sysinfo size */
 #define PRJCONF_SYSINFO_SIZE            (4 * 1024)
