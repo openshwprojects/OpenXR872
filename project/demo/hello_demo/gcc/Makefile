@@ -38,6 +38,7 @@ INCLUDE_PATHS += -I$(PRJ_ROOT_PATH)
 
 DIRS_IGNORE := $(PRJ_ROOT_PATH)/gcc%
 DIRS_IGNORE += $(PRJ_ROOT_PATH)/image%
+DIRS_IGNORE += $(PRJ_ROOT_PATH)/shared%
 DIRS_IGNORE += $(ROOT_PATH)/project/common/board/%
 DIRS_IGNORE += $(PRJ_BOARD)
 
@@ -46,6 +47,8 @@ DIRS := $(filter-out $(DIRS_IGNORE),$(DIRS_ALL))
 DIRS += $(PRJ_BOARD)
 
 SRCS := $(basename $(foreach dir,$(DIRS),$(wildcard $(dir)/*.[csS])))
+
+include ../shared/platforms/XR809/Makefile
 
 OBJS := $(addsuffix .o,$(SRCS))
 
