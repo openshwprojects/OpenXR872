@@ -123,7 +123,7 @@ extern "C" {
  */
 
 /* console enable/disable */
-#define PRJCONF_CONSOLE_EN              0
+#define PRJCONF_CONSOLE_EN              1
 
 /* app pm mode enable/disable */
 #define PRJCONF_PM_EN                   1
