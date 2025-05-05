@@ -393,6 +393,7 @@ endif
 	chmod a+r *.bin && \
 	$(Q)$(CC) -E -P -CC $(CC_SYMBOLS) -o $(PROJECT_IMG_CFG) - < $(IMAGE_CFG) && \
 	$(SIGNPACK_GEN_CERT) && \
+	($(IMAGE_TOOL) $(IMAGE_TOOL_OPT) -c $(PROJECT_IMG_CFG) -o $(IMAGE_NAME).img || true) && \
 	$(IMAGE_TOOL) $(IMAGE_TOOL_OPT) -c $(PROJECT_IMG_CFG) -o $(IMAGE_NAME).img
 
 PHONY += image_xz
