@@ -19,6 +19,7 @@ DIRS_ALL := $(shell find src -type d)
 DIRS := $(filter-out $(DIRS_IGNORE),$(DIRS_ALL))
 
 SRCS := $(sort $(basename $(foreach dir,$(DIRS),$(wildcard $(dir)/*.[csS]))))
+SRCS += src/apps/mqtt/mqtt
 
 OBJS := $(addsuffix .o,$(SRCS))
 

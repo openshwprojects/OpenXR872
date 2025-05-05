@@ -260,10 +260,10 @@ IMAGE_TOOL := ../$(ROOT_PATH)/tools/$(MKIMAGE)
 # image config file, maybe override by the specific project
 # $(IMAGE_CFG_PATH) is relative to $(IMAGE_PATH)
 IMAGE_CFG_PATH ?= ../$(ROOT_PATH)/project/image_cfg
-IMAGE_CFG ?= $(IMAGE_CFG_PATH)/image.cfg
+IMAGE_CFG ?= $(IMAGE_CFG_PATH)/image_auto_cal.cfg
 
 # image config file generated automatically for creating image, relative to $(IMAGE_PATH)
-PROJECT_IMG_CFG := .image.cfg
+PROJECT_IMG_CFG ?= .image_auto_cal.cfg
 
 # image tool's options to enable/disable OTA
 ifeq ($(__CONFIG_OTA), y)
@@ -393,6 +393,7 @@ endif
 	chmod a+r *.bin && \
 	$(Q)$(CC) -E -P -CC $(CC_SYMBOLS) -o $(PROJECT_IMG_CFG) - < $(IMAGE_CFG) && \
 	$(SIGNPACK_GEN_CERT) && \
+	($(IMAGE_TOOL) $(IMAGE_TOOL_OPT) -c $(PROJECT_IMG_CFG) -o $(IMAGE_NAME).img || true) && \
 	$(IMAGE_TOOL) $(IMAGE_TOOL_OPT) -c $(PROJECT_IMG_CFG) -o $(IMAGE_NAME).img
 
 PHONY += image_xz
