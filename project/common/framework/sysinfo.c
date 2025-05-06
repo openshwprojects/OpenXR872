@@ -240,9 +240,9 @@ int sysinfo_default(void)
 	g_sysinfo.sta_use_dhcp = 1;
 
 	/* netif AP */
-	IP4_ADDR(&g_sysinfo.netif_ap_param.ip_addr, 192, 168, 51, 1);
+	IP4_ADDR(&g_sysinfo.netif_ap_param.ip_addr, 192, 168, 4, 1);
 	IP4_ADDR(&g_sysinfo.netif_ap_param.net_mask, 255, 255, 255, 0);
-	IP4_ADDR(&g_sysinfo.netif_ap_param.gateway, 192, 168, 51, 1);
+	IP4_ADDR(&g_sysinfo.netif_ap_param.gateway, 192, 168, 4, 1);
 #endif
 
 	SYSINFO_DBG("set default value\n");

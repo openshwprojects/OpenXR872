@@ -2122,7 +2122,7 @@ static uint8_t src_mac[6] = {0x14, 0x72, 0x58, 0x36, 0x90, 0xaa};
 static uint8_t dest_mac[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 static const char *ssid = "AP_test";
 static uint8_t ap_channel = 1;
-static uint8_t src_ip[4] = {192, 168, 51, 123};
+static uint8_t src_ip[4] = {192, 168, 4, 123};
 
 void buf_dump(unsigned char *buf, int len)
 {
