@@ -63,7 +63,7 @@
  *
  * sysinfo get sta ip
  * sysinfo set sta ip <ip>
- *   - sysinfo set sta ip 192.168.51.100
+ *   - sysinfo set sta ip 192.168.4.100
  *
  * sysinfo get sta mask
  * sysinfo set sta mask <mask>
@@ -71,11 +71,11 @@
  *
  * sysinfo get sta gateway
  * sysinfo set sta gateway <gateway>
- *   - sysinfo set sta gateway 192.168.51.1
+ *   - sysinfo set sta gateway 192.168.4.1
  *
  * sysinfo get ap ip
  * sysinfo set ap ip <ip>
- *   - sysinfo set ap ip 192.168.51.1
+ *   - sysinfo set ap ip 192.168.4.1
  *
  * sysinfo get ap mask
  * sysinfo set ap mask <mask>
@@ -83,7 +83,7 @@
  *
  * sysinfo get ap gateway
  * sysinfo set ap gateway <gateway>
- *   - sysinfo set ap gateway 192.168.51.1
+ *   - sysinfo set ap gateway 192.168.4.1
  */
 
 enum cmd_status cmd_sysinfo_default_exec(char *cmd)
@@ -396,14 +396,14 @@ enum cmd_status cmd_sysinfo_startup_state_exec(char *cmd)
 	"\t\tsysinfo set sta ssid <ssid>, eg. sysinfo set sta ssid ssid_example\n"\
 	"\t\tsysinfo set sta psk <psk>, eg. sysinfo set sta psk psk_example\n"\
 	"\t\tsysinfo set sta dhcp <dhcp>, eg. sysinfo set sta dhcp 1\n"\
-	"\t\tsysinfo set sta ip <ip>, eg. sysinfo set sta ip 192.168.51.100\n"\
+	"\t\tsysinfo set sta ip <ip>, eg. sysinfo set sta ip 192.168.4.100\n"\
 	"\t\tsysinfo set sta mask <mask>, eg. sysinfo set sta mask 255.255.255.0\n"\
-	"\t\tsysinfo set sta gateway <gateway>, eg. sysinfo set sta gateway 192.168.51.1\n"\
+	"\t\tsysinfo set sta gateway <gateway>, eg. sysinfo set sta gateway 192.168.4.1\n"\
 	"\t\tsysinfo set ap ssid <ssid>, eg. sysinfo set ap ssid ssid_example\n"\
 	"\t\tsysinfo set ap psk <psk>, eg. sysinfo set ap psk psk_example\n"\
-	"\t\tsysinfo set ap ip <ip>, eg. sysinfo set ap ip 192.168.51.1\n"\
+	"\t\tsysinfo set ap ip <ip>, eg. sysinfo set ap ip 192.168.4.1\n"\
 	"\t\tsysinfo set ap mask <mask>, eg. sysinfo set ap mask 255.255.255.0\n"\
-	"\t\tsysinfo set ap gateway <gateway>, eg. sysinfo set ap gateway 192.168.51.1"
+	"\t\tsysinfo set ap gateway <gateway>, eg. sysinfo set ap gateway 192.168.4.1"
 #define sysinfo_get_help_info "sysinfo get <field> <arg>\n"\
 	"\t\tsysinfo get mac\n"\
 	"\t\tsysinfo get sta ssid\n"\

@@ -1,8 +1,8 @@
 #ifndef DHCPD_CFG_H_H
 #define DHCPD_CFG_H_H
 
-#define DHCPD_ADDR_START         "192.168.51.100"
-#define DHCPD_ADDR_END           "192.168.51.104"
+#define DHCPD_ADDR_START         "192.168.4.100"
+#define DHCPD_ADDR_END           "192.168.4.104"
 #define DHCPD_INTERFACE          "en1"
 #define DHCPD_OPTION             ""
 #define DHCPD_OPT                ""
