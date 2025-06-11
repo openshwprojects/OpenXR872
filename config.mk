@@ -48,14 +48,14 @@ __CONFIG_OS_FREERTOS ?= y
 ifeq ($(__CONFIG_OS_FREERTOS), y)
 #   - 80203: FreeRTOS 8.2.3
 #   - 100201: FreeRTOS 10.2.1
-__CONFIG_OS_FREERTOS_VER ?= 80203
+__CONFIG_OS_FREERTOS_VER ?= 100201
 endif
 
 # lwIP
 #   - 10401: lwIP 1.4.1, support IPv4 stack only
 #   - 20003: lwIP 2.0.3, support dual IPv4/IPv6 stack
 #   - 20102: lwIP 2.1.2, support dual IPv4/IPv6 stack
-__CONFIG_LWIP_VER ?= 10401
+__CONFIG_LWIP_VER ?= 20102
 
 # mbed TLS
 #   - 0x02020000: mbed TLS 2.2.0
