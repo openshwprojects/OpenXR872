@@ -82,7 +82,7 @@ extern "C" {
 #endif /* PRJCONF_SYSINFO_SAVE_TO_FLASH */
 
 /* MAC address source */
-#define PRJCONF_MAC_ADDR_SOURCE         SYSINFO_MAC_ADDR_CHIPID
+#define PRJCONF_MAC_ADDR_SOURCE         SYSINFO_MAC_ADDR_EFUSE
 
 /* watchdog enable/disable */
 #define PRJCONF_WDG_EN                  0

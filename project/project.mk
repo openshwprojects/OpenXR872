@@ -393,17 +393,16 @@ endif
 	chmod a+r *.bin && \
 	$(CC) -E -P -CC $(CC_SYMBOLS) -o $(PROJECT_IMG_CFG) - < $(IMAGE_CFG) && \
 	$(SIGNPACK_GEN_CERT) && \
-	($(IMAGE_TOOL) $(IMAGE_TOOL_OPT) -c $(PROJECT_IMG_CFG) -o $(IMAGE_NAME).img || true) && \
 	$(IMAGE_TOOL) $(IMAGE_TOOL_OPT) -c $(PROJECT_IMG_CFG) -o $(IMAGE_NAME).img
 
 PHONY += image_xz
 image_xz:
 ifeq ($(__CONFIG_OTA_POLICY), 0x01)
-	cd $(IMAGE_PATH) && \
-	dd if=$(XZ_DEFAULT_IMG) of=$(XZ_DEFAULT_IMG).temp skip=$(BOOTLOADER_LENGTH) bs=1c && \
-	$(Q)$(XZ) $(XZ_DEFAULT_IMG).temp && \
-	mv $(XZ_DEFAULT_IMG).temp.xz image.xz && \
-	rm $(XZ_DEFAULT_IMG).temp && \
+	$(Q)cd $(IMAGE_PATH) && cp $(XZ_DEFAULT_IMG) /tmp/$(XZ_DEFAULT_IMG) && \
+	dd if=/tmp/$(XZ_DEFAULT_IMG) of=/tmp/$(XZ_DEFAULT_IMG).temp skip=$(BOOTLOADER_LENGTH) bs=1c && \
+	$(XZ) /tmp/$(XZ_DEFAULT_IMG).temp && \
+	mv /tmp/$(XZ_DEFAULT_IMG).temp.xz image.xz && \
+	rm /tmp/$(XZ_DEFAULT_IMG).temp && rm /tmp/$(XZ_DEFAULT_IMG) && \
 	$(IMAGE_TOOL) $(IMAGE_TOOL_OPT) -c $(IMAGE_XZ_CFG) -o $(IMAGE_NAME)$(SUFFIX_IMG_XZ).img
 endif
 
