@@ -19,4 +19,3 @@ endif
 # enable/disable OTA, default to n
 export __CONFIG_OTA := y
 
-PROJECT_IMG_CFG = ../../image/xr872/image_auto_cal.cfg

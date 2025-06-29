@@ -36,53 +36,9 @@
 #include "shared/src/mqtt/new_mqtt.h"
 #include "shared/src/new_common.h"
 
-
-
-OSStatus rtos_create_thread( beken_thread_t* thread, 
-							uint8_t priority, const char* name, 
-							beken_thread_function_t function,
-							uint32_t stack_size, beken_thread_arg_t arg ) {
-    OSStatus err = kNoErr;
-	int new_priority;
-	// TODO: translate
-	new_priority = OS_THREAD_PRIO_CONSOLE;
-
-		printf("rtos_create_thread %s stack %i\n", name, stack_size);
-	stack_size = (2 * 1024);
-	err = OS_ThreadCreate(thread,
-		                name,
-		                function,
-		                arg,
-		                new_priority,
-		                stack_size);
-		printf("rtos_create_thread %s  gives %i\n", name,  err);
-
-	return err;
-}
-
-OSStatus rtos_delete_thread( beken_thread_t* thread ) {
-    return OS_ThreadDelete( thread );
-}
-#define MAX_DUMP_BUFF_SIZE 256
-char dump_buffer[MAX_DUMP_BUFF_SIZE];
-void bk_printf(char *format, ...){
-    va_list vp;
-
-    va_start(vp, format);
-    vsnprintf(dump_buffer, MAX_DUMP_BUFF_SIZE, format, vp);
-    va_end(vp);
-
-	printf("%s\r\n",dump_buffer);
-}
 int main(void)
 {
 	platform_init();
-	int x = 0;
-	while (x++<10) {
-		OS_Sleep(1);
-		printf("Hello wordsald! @ %u sec\n", OS_GetTicks());
-	}
-	Main_Init();
 	user_main();
 	return 0;
 }

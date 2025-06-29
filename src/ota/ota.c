@@ -276,7 +276,7 @@ ota_err:
 	return OTA_STATUS_OK;
 }
 
-static ota_status_t ota_update_image(void *url,
+ota_status_t ota_update_image(void *url,
                                      ota_update_init_t init_cb,
                                      ota_update_get_t get_cb)
 {

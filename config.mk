@@ -22,7 +22,7 @@ __CONFIG_LIBC_WRAP_STDIO ?= y
 # heap managed mode
 # 0x00: use stdlib
 # 0x01: use sys_heap
-__CONFIG_MALLOC_MODE ?= 0x00
+__CONFIG_MALLOC_MODE ?= 0x01
 
 # trace heap memory usage and error when using malloc, free, etc.
 __CONFIG_MALLOC_TRACE ?= n
@@ -80,7 +80,7 @@ __CONFIG_WLAN_STA ?= y
 __CONFIG_WLAN_AP ?= y
 
 # wlan monitor mode
-__CONFIG_WLAN_MONITOR ?= y
+__CONFIG_WLAN_MONITOR ?= n
 
 __CONFIG_WLAN_STA_SOFTAP_COEXIST ?= n
 
@@ -194,7 +194,7 @@ __CONFIG_OTA ?= n
 # ota policy, choose ota mode
 #   - 0x00: ping-pong mode
 #   - 0x01: image compression mode
-__CONFIG_OTA_POLICY ?= 0x00
+__CONFIG_OTA_POLICY ?= 0x01
 
 # bin compression
 __CONFIG_BIN_COMPRESS ?= n
